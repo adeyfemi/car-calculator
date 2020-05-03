@@ -110,9 +110,9 @@ loop do
 
   case operator
   when '1'
-    prompt("The monthly interest amount is #{format('$%0.2f', mth_int_rate)}.")
+    prompt("The monthly interest amount is #{sprintf("%0.2f", mth_int_rate)}.")
   when '2'
-    prompt("The loan duration is #{format('%0.2f', loan_dur_mths}")
+    prompt("The loan duration is #{sprintf("%0.2f", loan_dur_mths)}.")
   end
 
   prompt("Do you want to recalculate? (Y to calculate the again).")
