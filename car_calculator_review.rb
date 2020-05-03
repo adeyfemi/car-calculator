@@ -106,13 +106,13 @@ loop do
   
   loan_dur_mths = (loan_duration.to_i * num_of_months.to_i)
   mth_int = (annual_percentage_rate.to_f / 100).round(2)
-  mth_int_rate = loan_amount.to_i * (mth_int_int.to_f / (1 - (1 + mth_int)**(-loan_dur_mths)))
+  mth_int_rate = loan_amount.to_i * (mth_int_rate.to_f / (1 - (1 + mth_int)**(-loan_dur_mths)))
 
   case operator
   when '1'
     prompt("The monthly interest amount is #{sprintf("%0.2f", mth_int_rate)}.")
   when '2'
-    prompt("The loan duration is #{sprintf("%0.2f", loan_dur_mths)}.")
+    prompt("The loan duration is #{sprintf("%0.2f", loan_dur_mths)} months.")
   end
 
   prompt("Do you want to recalculate? (Y to calculate the again).")
