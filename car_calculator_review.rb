@@ -2,6 +2,20 @@ def prompt(message)
   Kernel.puts("=> #{message}")
 end
 
+def retrieve_user_name
+  name = ''
+
+  loop do
+    name = Kernel.gets().chomp().gsub(/\s+/, "")
+
+    if name.empty?()
+      prompt("Make sure you use a valid name.")
+    else
+      break
+      end
+    end
+end
+
 def valid_loan_amount?(input)
   Integer(input) rescue false
 end
@@ -40,7 +54,7 @@ loop do
 end
 
 loop do
-  prompt("Hi #{name}")
+  prompt("Hi #{retrieve_user_name}")
 
   loan_amount = ''
 
